@@ -219,11 +219,11 @@ public class Signup extends JFrame implements ActionListener {
             if (textName.getText().equals("")){
                 JOptionPane.showMessageDialog(null, "Fill all the fields");
             }else {
-//                Connn c = new Connn();
-//                String q = "insert into signup values('"+formno+"', '"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"', '"+address+"', '"+city+"','"+pincode+"','"+state+"' )";
-//                c.statement.executeUpdate(q);
+                Connn c = new Connn();
+                String q = "insert into signup values('"+formno+"', '"+name+"','"+fname+"','"+dob+"','"+gender+"','"+email+"','"+marital+"', '"+address+"', '"+city+"','"+pincode+"','"+state+"' )";
+                c.statement.executeUpdate(q);
 //                new Signup2(formno);
-//                setVisible(false);
+                setVisible(false);
             }
 
         }catch (Exception E){
