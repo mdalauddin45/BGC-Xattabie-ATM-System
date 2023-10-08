@@ -96,17 +96,17 @@ public class Login  extends JFrame implements ActionListener{
 
     private void handleSignIn() {
         try {
-            Connn c = new Connn();
-            String cardno = textField2.getText();
-            String pin = passwordField3.getText();
-            String q = "select * from login where card_number = '" + cardno + "' and  pin = '" + pin + "'";
-            ResultSet resultSet = c.statement.executeQuery(q);
-            if (resultSet.next()) {
-                setVisible(false);
-                new main_Class(pin);
-            } else {
-                JOptionPane.showMessageDialog(null, "Incorrect Card Number or PIN");
-            }
+//            Connn c = new Connn();
+//            String cardno = textField2.getText();
+//            String pin = passwordField3.getText();
+//            String q = "select * from login where card_number = '" + cardno + "' and  pin = '" + pin + "'";
+//            ResultSet resultSet = c.statement.executeQuery(q);
+//            if (resultSet.next()) {
+//                setVisible(false);
+//                new main_Class(pin);
+//            } else {
+//                JOptionPane.showMessageDialog(null, "Incorrect Card Number or PIN");
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         }
