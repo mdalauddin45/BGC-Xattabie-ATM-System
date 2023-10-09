@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class Signup2 extends JFrame implements ActionListener {
     JComboBox comboBox,comboBox2,comboBox3,comboBox4,comboBox5;
-    JTextField textPan,textAadhar;
+    JTextField textnid;
     JRadioButton r1,r2, e1,e2;
     JButton next;
     String formno;
@@ -94,25 +94,16 @@ public class Signup2 extends JFrame implements ActionListener {
         comboBox5.setBounds(350,340,320,30);
         add(comboBox5);
 
-        JLabel l8 = new JLabel("PAN Number : ");
-        l8.setFont(new Font("Raleway", Font.BOLD,18));
-        l8.setBounds(100,390,150,30);
-        add(l8);
 
-        textPan = new JTextField();
-        textPan.setFont(new Font("Raleway", Font.BOLD,18));
-        textPan.setBounds(350,390,320,30);
-        add(textPan);
-
-        JLabel l9 = new JLabel("Aadhar Number : ");
+        JLabel l9 = new JLabel("NID Number : ");
         l9.setFont(new Font("Raleway", Font.BOLD,18));
         l9.setBounds(100,440,180,30);
         add(l9);
 
-        textAadhar = new JTextField();
-        textAadhar.setFont(new Font("Raleway", Font.BOLD,18));
-        textAadhar.setBounds(350,440,320,30);
-        add(textAadhar);
+        textnid = new JTextField();
+        textnid.setFont(new Font("Raleway", Font.BOLD,18));
+        textnid.setBounds(350,440,320,30);
+        add(textnid);
 
 
         JLabel l10 = new JLabel("Senior Citizen : ");
@@ -181,8 +172,7 @@ public class Signup2 extends JFrame implements ActionListener {
         String edu = (String) comboBox4.getSelectedItem();
         String occ = (String) comboBox5.getSelectedItem();
 
-        String pan = textPan.getText();
-        String addhar = textAadhar.getText();
+        String nid = textnid.getText();
 
         String scitizen = " ";
         if ((r1.isSelected())){
@@ -198,13 +188,13 @@ public class Signup2 extends JFrame implements ActionListener {
         }
 
         try{
-            if (textPan.getText().equals("") || textAadhar.getText().equals("")){
+            if (textnid.getText().equals("")){
                 JOptionPane.showMessageDialog(null,"Fill all the fields");
             }else {
                 Connn c = new Connn();
-                String q = "insert into Signuptwo values('"+formno+"', '"+rel+"', '"+cate+"','"+inc+"','"+edu+"','"+occ+"','"+pan+"','"+addhar+"','"+scitizen+"','"+eAccount+"')";
+                String q = "insert into Signuptwo values('"+formno+"', '"+rel+"', '"+cate+"','"+inc+"','"+edu+"','"+occ+"','"+nid+"','"+scitizen+"','"+eAccount+"')";
                 c.statement.executeUpdate(q);
-//                new Signup3(formno);
+                new Signup3(formno);
                 setVisible(false);
             }
 

@@ -90,7 +90,7 @@ public class Login  extends JFrame implements ActionListener{
         setLayout(null);
         setSize(850,480);
         setLocation(450,200);
-//        setUndecorated(true);
+        setUndecorated(true);
         setVisible(true);
     }
 
@@ -103,12 +103,12 @@ public class Login  extends JFrame implements ActionListener{
             ResultSet resultSet = c.statement.executeQuery(q);
             if (resultSet.next()) {
                 setVisible(false);
-//                new main_Class(pin);
+                new main_Class(pin);
             } else {
                 JOptionPane.showMessageDialog(null, "Incorrect Card Number or PIN");
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); 
         }
     }
 
