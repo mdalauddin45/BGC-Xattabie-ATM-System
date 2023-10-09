@@ -57,7 +57,7 @@ public class mini extends JFrame implements ActionListener {
                     balance -= Integer.parseInt(resultSet.getString("amount"));
                 }
             }
-            label4.setText("Your Total Balance is Rs "+balance);
+            label4.setText("Your Total Balance is Tk "+balance);
         }catch (Exception e){
             e.printStackTrace();
         }

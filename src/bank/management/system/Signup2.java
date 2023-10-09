@@ -38,7 +38,7 @@ public class Signup2 extends JFrame implements ActionListener {
         l3.setBounds(100,120,100,30);
         add(l3);
 
-        String religion[] = {"Hindu","Muslim","Sikh", "Christian", "Other"};
+        String religion[] = {"Hindu","Muslim","Christian", "Other"};
         comboBox = new JComboBox(religion);
         comboBox.setBackground(new Color(252,208,76));
         comboBox.setFont(new Font("Raleway",Font.BOLD,14));
@@ -202,8 +202,6 @@ public class Signup2 extends JFrame implements ActionListener {
         }catch (Exception E){
             E.printStackTrace();
         }
-
-
     }
 
     public static void main(String[] args) {
