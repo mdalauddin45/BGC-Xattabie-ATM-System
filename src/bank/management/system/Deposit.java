@@ -50,10 +50,13 @@ public class Deposit extends JFrame implements ActionListener {
 
 
 
-
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int) (screenSize.getWidth() * 0.8);
+        int height = (int) (screenSize.getHeight() * 0.8);
+        setSize(width, height);
+        setLocationRelativeTo(null);
         setLayout(null);
-        setSize(1550,1080);
-        setLocation(0,0);
+
         setVisible(true);
 
     }

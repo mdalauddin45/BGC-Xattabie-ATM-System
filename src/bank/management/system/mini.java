@@ -68,7 +68,11 @@ public class mini extends JFrame implements ActionListener {
         button.setBackground(Color.BLACK);
         button.setForeground(Color.WHITE);
         add(button);
-
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int) (screenSize.getWidth() * 0.25);
+        int height = (int) (screenSize.getHeight() * 0.6);
+        setSize(width, height);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
     @Override

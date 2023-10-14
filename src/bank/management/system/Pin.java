@@ -69,9 +69,12 @@ public class Pin extends JFrame implements ActionListener {
         l3.add(b2);
 
 
-        setSize(1550,1080);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int) (screenSize.getWidth() * 0.8);
+        int height = (int) (screenSize.getHeight() * 0.8);
+        setSize(width, height);
+        setLocationRelativeTo(null);
         setLayout(null);
-        setLocation(0,0);
         setVisible(true);
     }
 

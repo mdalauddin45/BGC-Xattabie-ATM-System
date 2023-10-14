@@ -181,8 +181,13 @@ public class Signup extends JFrame implements ActionListener {
 
         getContentPane().setBackground(new Color(222,255,228));
         setLayout(null);
-        setSize(850,800);
-        setLocation(360,40);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int) (screenSize.getWidth() * 0.42);
+        int height = (int) (screenSize.getHeight() * 0.8);
+        setSize(width, height);
+//        setSize(850,800);
+        setLocationRelativeTo(null);
+//        setLocation(360,40);
         setVisible(true);
 
     }

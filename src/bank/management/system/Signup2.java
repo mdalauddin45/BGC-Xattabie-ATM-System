@@ -158,9 +158,12 @@ public class Signup2 extends JFrame implements ActionListener {
 
 
         setLayout(null);
-        setSize(850,750);
-        setLocation(450,80);
         getContentPane().setBackground(new Color(252, 208, 76));
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        int width = (int) (screenSize.getWidth() * 0.42);
+        int height = (int) (screenSize.getHeight() * 0.8);
+        setSize(width, height);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 
@@ -192,7 +195,7 @@ public class Signup2 extends JFrame implements ActionListener {
                 JOptionPane.showMessageDialog(null,"Fill all the fields");
             }else {
                 Connn c = new Connn();
-                String q = "insert into Signuptwo values('"+formno+"', '"+rel+"', '"+cate+"','"+inc+"','"+edu+"','"+occ+"','"+nid+"','"+scitizen+"','"+eAccount+"')";
+                String q = "insert into signuptwo values('"+formno+"', '"+rel+"', '"+cate+"','"+inc+"','"+edu+"','"+occ+"','"+nid+"','"+scitizen+"','"+eAccount+"')";
                 c.statement.executeUpdate(q);
                 new Signup3(formno);
                 setVisible(false);
