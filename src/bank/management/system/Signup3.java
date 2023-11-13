@@ -1,13 +1,12 @@
 package bank.management.system;
 
+import javax.print.attribute.standard.JobHoldUntil;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.rmi.server.ExportException;
 import java.util.Random;
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
 
 public class Signup3 extends JFrame implements ActionListener {
 
@@ -15,7 +14,6 @@ public class Signup3 extends JFrame implements ActionListener {
     JCheckBox c1,c2,c3,c4,c5,c6;
     JButton s,c;
     String formno;
-    Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
     Signup3(String formno){
 
         this.formno = formno;
@@ -182,12 +180,9 @@ public class Signup3 extends JFrame implements ActionListener {
         add(c);
 
         getContentPane().setBackground(new Color(215,252,252));
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int) (screenSize.getWidth() * 0.42);
-        int height = (int) (screenSize.getHeight() * 0.8);
-        setSize(width, height);
-        setLocationRelativeTo(null);
+        setSize(850,800);
         setLayout(null);
+        setLocation(400,20);
         setVisible(true);
     }
 
@@ -236,35 +231,14 @@ public class Signup3 extends JFrame implements ActionListener {
                     String q2 = "insert into login values('"+formno+"','"+cardno+"','"+pin+"')";
                     c1.statement.executeUpdate(q1);
                     c1.statement.executeUpdate(q2);
-
-                    String message = "Card Number : " + cardno + "\nPin : " + pin;
-                    String copyButtonText = "Copy Card Number";
-                    String[] options = {copyButtonText};
-
-                    int option = JOptionPane.showOptionDialog(
-                            null,
-                            message,
-                            "Card Information",
-                            JOptionPane.DEFAULT_OPTION,
-                            JOptionPane.INFORMATION_MESSAGE,
-                            null,
-                            options,
-                            options[0]
-                    );
-
-                    if (option == 0) {
-                        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-                        StringSelection selection = new StringSelection(cardno);
-                        clipboard.setContents(selection, null);
-                    }
-
+                    JOptionPane.showMessageDialog(null,"Card Number : "+cardno+"\n Pin : "+pin );
                     new Deposit(pin);
                     setVisible(false);
-
                 }
             } else if (e.getSource()==c) {
                 System.exit(0);
             }
+
         }catch (Exception E){
             E.printStackTrace();
         }

@@ -1,5 +1,4 @@
 package bank.management.system;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -74,11 +73,8 @@ public class main_Class extends JFrame implements ActionListener {
         l3.add(b7);
 
         setLayout(null);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int) (screenSize.getWidth() * 0.8);
-        int height = (int) (screenSize.getHeight() * 0.8);
-        setSize(width, height);
-        setLocationRelativeTo(null);
+        setSize(1550,1080);
+        setLocation(0,0);
         setVisible(true);
 
     }
@@ -86,7 +82,7 @@ public class main_Class extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==b1){
-            new Deposit(pin);
+           new Deposit(pin);
             setVisible(false);
         }else if (e.getSource()==b7){
             System.exit(0);

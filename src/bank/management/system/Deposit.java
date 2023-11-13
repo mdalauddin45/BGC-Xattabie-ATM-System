@@ -1,5 +1,4 @@
 package bank.management.system;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -7,10 +6,10 @@ import java.awt.event.ActionListener;
 import java.util.Date;
 
 public class Deposit extends JFrame implements ActionListener {
-    String pin;
-    TextField textField;
+   String pin;
+   TextField textField;
 
-    JButton b1, b2;
+   JButton b1, b2;
     Deposit(String pin){
         this.pin = pin;
 
@@ -50,13 +49,10 @@ public class Deposit extends JFrame implements ActionListener {
 
 
 
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int) (screenSize.getWidth() * 0.8);
-        int height = (int) (screenSize.getHeight() * 0.8);
-        setSize(width, height);
-        setLocationRelativeTo(null);
-        setLayout(null);
 
+        setLayout(null);
+        setSize(1550,1080);
+        setLocation(0,0);
         setVisible(true);
 
     }
@@ -72,7 +68,7 @@ public class Deposit extends JFrame implements ActionListener {
                 }else {
                     Connn c = new Connn();
                     c.statement.executeUpdate("insert into bank values('"+pin+"', '"+date+"','Deposit', '"+amount+"')");
-                    JOptionPane.showMessageDialog(null,"Tk. "+amount+" Deposited Successfully");
+                    JOptionPane.showMessageDialog(null,"Rs. "+amount+" Deposited Successfully");
                     setVisible(false);
                     new main_Class(pin);
                 }

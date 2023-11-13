@@ -22,7 +22,7 @@ public class Withdrawl extends JFrame implements ActionListener {
         l3.setBounds(0,0,1550,830);
         add(l3);
 
-        JLabel label1 = new JLabel("MAXIMUM WITHDRAWAL IS TK.10,000");
+        JLabel label1 = new JLabel("MAXIMUM WITHDRAWAL IS RS.10,000");
         label1.setForeground(Color.WHITE);
         label1.setFont(new Font("System", Font.BOLD, 16));
         label1.setBounds(460,180,700,35);
@@ -57,11 +57,8 @@ public class Withdrawl extends JFrame implements ActionListener {
         l3.add(b2);
 
         setLayout(null);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int) (screenSize.getWidth() * 0.8);
-        int height = (int) (screenSize.getHeight() * 0.8);
-        setSize(width, height);
-        setLocationRelativeTo(null);
+        setSize(1550,1080);
+        setLocation(0,0);
         setVisible(true);
     }
 
@@ -90,7 +87,7 @@ public class Withdrawl extends JFrame implements ActionListener {
                     }
 
                     c.statement.executeUpdate("insert into bank values('" + pin + "', '" + date + "', 'Withdrawl', '" + amount + "' )");
-                    JOptionPane.showMessageDialog(null, "Tk. " + amount + " Debited Successfully");
+                    JOptionPane.showMessageDialog(null, "Rs. " + amount + " Debited Successfully");
                     setVisible(false);
                     new main_Class(pin);
 

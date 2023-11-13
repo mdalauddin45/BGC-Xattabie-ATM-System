@@ -1,6 +1,7 @@
 package bank.management.system;
 
 import com.toedter.calendar.JDateChooser;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -181,13 +182,8 @@ public class Signup extends JFrame implements ActionListener {
 
         getContentPane().setBackground(new Color(222,255,228));
         setLayout(null);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int) (screenSize.getWidth() * 0.42);
-        int height = (int) (screenSize.getHeight() * 0.8);
-        setSize(width, height);
-//        setSize(850,800);
-        setLocationRelativeTo(null);
-//        setLocation(360,40);
+        setSize(850,800);
+        setLocation(360,40);
         setVisible(true);
 
     }
@@ -234,6 +230,7 @@ public class Signup extends JFrame implements ActionListener {
         }catch (Exception E){
             E.printStackTrace();
         }
+
     }
 
     public static void main(String[] args) {

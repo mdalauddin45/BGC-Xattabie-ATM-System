@@ -20,7 +20,7 @@ public class mini extends JFrame implements ActionListener {
         label1.setBounds(20,140,400,200);
         add(label1);
 
-        JLabel label2 = new JLabel("Bank Statement");
+        JLabel label2 = new JLabel("TechCoder A.V");
         label2.setFont(new Font("System", Font.BOLD,15));
         label2.setBounds(150,20,200,20);
         add(label2);
@@ -57,7 +57,7 @@ public class mini extends JFrame implements ActionListener {
                     balance -= Integer.parseInt(resultSet.getString("amount"));
                 }
             }
-            label4.setText("Your Total Balance is Tk "+balance);
+            label4.setText("Your Total Balance is Rs "+balance);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -68,13 +68,10 @@ public class mini extends JFrame implements ActionListener {
         button.setBackground(Color.BLACK);
         button.setForeground(Color.WHITE);
         add(button);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int) (screenSize.getWidth() * 0.25);
-        int height = (int) (screenSize.getHeight() * 0.6);
-        setSize(width, height);
-        setLocationRelativeTo(null);
+
         setVisible(true);
     }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         setVisible(false);

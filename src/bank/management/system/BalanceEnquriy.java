@@ -1,5 +1,4 @@
 package bank.management.system;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -21,7 +20,7 @@ public class BalanceEnquriy extends JFrame implements ActionListener {
         l3.setBounds(0,0,1550,830);
         add(l3);
 
-        JLabel label1 = new JLabel("Your Current Balance is Tk ");
+        JLabel label1 = new JLabel("Your Current Balance is Rs ");
         label1.setForeground(Color.WHITE);
         label1.setFont(new Font("System", Font.BOLD, 16));
         label1.setBounds(430,180,700,35);
@@ -58,11 +57,8 @@ public class BalanceEnquriy extends JFrame implements ActionListener {
         label2.setText(""+balance);
 
         setLayout(null);
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int) (screenSize.getWidth() * 0.8);
-        int height = (int) (screenSize.getHeight() * 0.8);
-        setSize(width, height);
-        setLocationRelativeTo(null);
+        setSize(1550,1080);
+        setLocation(0,0);
         setVisible(true);
     }
 

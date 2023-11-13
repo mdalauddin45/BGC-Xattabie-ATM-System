@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.util.Date;
 
 public class FastCash extends JFrame implements ActionListener {
+
     JButton b1,b2,b3,b4,b5,b6,b7;
     String pin;
     FastCash(String pin){
@@ -26,42 +27,42 @@ public class FastCash extends JFrame implements ActionListener {
         label.setFont(new Font("System",Font.BOLD,23));
         l3.add(label);
 
-        b1 = new JButton("Tk. 100");
+        b1 = new JButton("Rs. 100");
         b1.setForeground(Color.WHITE);
         b1.setBackground(new Color(65,125,128));
         b1.setBounds(410,274,150,35);
         b1.addActionListener(this);
         l3.add(b1);
 
-        b2 = new JButton("Tk. 500");
+        b2 = new JButton("Rs. 500");
         b2.setForeground(Color.WHITE);
         b2.setBackground(new Color(65,125,128));
         b2.setBounds(700,274,150,35);
         b2.addActionListener(this);
         l3.add(b2);
 
-        b3 = new JButton("Tk. 1000");
+        b3 = new JButton("Rs. 1000");
         b3.setForeground(Color.WHITE);
         b3.setBackground(new Color(65,125,128));
         b3.setBounds(410,318,150,35);
         b3.addActionListener(this);
         l3.add(b3);
 
-        b4 = new JButton("Tk. 2000");
+        b4 = new JButton("Rs. 2000");
         b4.setForeground(Color.WHITE);
         b4.setBackground(new Color(65,125,128));
         b4.setBounds(700,318,150,35);
         b4.addActionListener(this);
         l3.add(b4);
 
-        b5 = new JButton("Tk. 5000");
+        b5 = new JButton("Rs. 5000");
         b5.setForeground(Color.WHITE);
         b5.setBackground(new Color(65,125,128));
         b5.setBounds(410,362,150,35);
         b5.addActionListener(this);
         l3.add(b5);
 
-        b6 = new JButton("Tk. 10000");
+        b6 = new JButton("Rs. 10000");
         b6.setForeground(Color.WHITE);
         b6.setBackground(new Color(65,125,128));
         b6.setBounds(700,362,150,35);
@@ -75,12 +76,9 @@ public class FastCash extends JFrame implements ActionListener {
         b7.addActionListener(this);
         l3.add(b7);
 
-        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int) (screenSize.getWidth() * 0.8);
-        int height = (int) (screenSize.getHeight() * 0.8);
-        setSize(width, height);
-        setLocationRelativeTo(null);
         setLayout(null);
+        setSize(1550,1080);
+        setLocation(0,0);
         setVisible(true);
 
     }
@@ -111,13 +109,15 @@ public class FastCash extends JFrame implements ActionListener {
                 }
 
                 c.statement.executeUpdate("insert into bank values('"+pin+"','"+date+"', 'withdrawl', '"+amount+"')");
-                JOptionPane.showMessageDialog(null, "Tk. "+amount+" Debited Successfully");
+                JOptionPane.showMessageDialog(null, "Rs. "+amount+" Debited Successfully");
             }catch (Exception E){
                 E.printStackTrace();
             }
             setVisible(false);
             new main_Class(pin);
         }
+
+
     }
 
     public static void main(String[] args) {
