@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class Signup2 extends JFrame implements ActionListener {
     JComboBox comboBox,comboBox2,comboBox3,comboBox4,comboBox5;
-    JTextField textPan,textAadhar;
+    JTextField textnid;
     JRadioButton r1,r2, e1,e2;
     JButton next;
     String formno;
@@ -38,7 +38,7 @@ public class Signup2 extends JFrame implements ActionListener {
         l3.setBounds(60,120,100,30);
         add(l3);
 
-        String religion[] = {"Hindu","Muslim","Sikh", "Christian", "Other"};
+        String religion[] = {"Hindu","Muslim","Christian", "Other"};
         comboBox = new JComboBox(religion);
         comboBox.setBackground(new Color(252,208,76));
         comboBox.setFont(new Font("Raleway",Font.BOLD,14));
@@ -94,17 +94,8 @@ public class Signup2 extends JFrame implements ActionListener {
         comboBox5.setBounds(250,280,320,30);
         add(comboBox5);
 
-        JLabel l8 = new JLabel("PAN Number : ");
-        l8.setFont(new Font("Raleway", Font.BOLD,18));
-        l8.setBounds(100,390,150,30);
-        add(l8);
 
-        textPan = new JTextField();
-        textPan.setFont(new Font("Raleway", Font.BOLD,18));
-        textPan.setBounds(350,390,320,30);
-        add(textPan);
-
-        JLabel l9 = new JLabel("Aadhar Number : ");
+        JLabel l9 = new JLabel("NID Number : ");
         l9.setFont(new Font("Raleway", Font.BOLD,18));
         l9.setBounds(60,320,180,30);
         add(l9);
@@ -167,12 +158,10 @@ public class Signup2 extends JFrame implements ActionListener {
 
 
         setLayout(null);
-        setSize(850,750);
-        setLocation(450,80);
         getContentPane().setBackground(new Color(252, 208, 76));
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        int width = (int) (screenSize.getWidth() * 0.42);
-        int height = (int) (screenSize.getHeight() * 0.8);
+        int width = (int) (screenSize.getWidth() * 0.50);
+        int height = (int) (screenSize.getHeight() * 0.85);
         setSize(width, height);
         setLocationRelativeTo(null);
         setVisible(true);
@@ -186,8 +175,7 @@ public class Signup2 extends JFrame implements ActionListener {
         String edu = (String) comboBox4.getSelectedItem();
         String occ = (String) comboBox5.getSelectedItem();
 
-        String pan = textPan.getText();
-        String addhar = textAadhar.getText();
+        String nid = textnid.getText();
 
         String scitizen = " ";
         if ((r1.isSelected())){
@@ -203,11 +191,11 @@ public class Signup2 extends JFrame implements ActionListener {
         }
 
         try{
-            if (textPan.getText().equals("") || textAadhar.getText().equals("")){
+            if (textnid.getText().equals("")){
                 JOptionPane.showMessageDialog(null,"Fill all the fields");
             }else {
                 Connn c = new Connn();
-                String q = "insert into Signuptwo values('"+formno+"', '"+rel+"', '"+cate+"','"+inc+"','"+edu+"','"+occ+"','"+pan+"','"+addhar+"','"+scitizen+"','"+eAccount+"')";
+                String q = "insert into signuptwo values('"+formno+"', '"+rel+"', '"+cate+"','"+inc+"','"+edu+"','"+occ+"','"+nid+"','"+scitizen+"','"+eAccount+"')";
                 c.statement.executeUpdate(q);
                 new Signup3(formno);
                 setVisible(false);
@@ -215,10 +203,9 @@ public class Signup2 extends JFrame implements ActionListener {
 
 
         }catch (Exception E){
+            System.out.println(E.getMessage());
             E.printStackTrace();
         }
-
-
     }
 
     public static void main(String[] args) {

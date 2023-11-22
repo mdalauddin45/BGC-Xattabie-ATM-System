@@ -233,6 +233,7 @@ public class Signup extends JFrame implements ActionListener {
             }
 
         }catch (Exception E){
+            System.out.println(E.getMessage());
             E.printStackTrace();
         }
 
